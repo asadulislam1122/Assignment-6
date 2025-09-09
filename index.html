@@ -289,12 +289,31 @@
         </form>
       </div>
     </section>
+    <!-- modal -->
+    <section>
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <!-- innerhtml -->
+          <div id="details-cointener" class=""></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
     <!-- footer -->
     <footer
       class="w-full h-[72px] bg-[#14532D] flex items-center justify-center"
     >
       <p class="text-white text-sm">© 2025 Green Earth. All Rights Reserved.</p>
     </footer>
+
     <!-- script  -->
     <script src="./script/script.js"></script>
   </body>

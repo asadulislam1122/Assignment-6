@@ -25,6 +25,43 @@ const loadCointener = (id) => {
       displayLoadCointener(data.plants);
     });
 };
+// 1111111111111111111111111111111111111111
+
+// tree name modal
+const detailTrees = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  // console.log(url);
+  const res = await fetch(url);
+  const treeDetails = await res.json();
+  displayTreeDtails(treeDetails.plants);
+};
+const displayTreeDtails = (catagory) => {
+  console.log(catagory);
+  const detailsTrees = document.getElementById("details-cointener");
+  detailsTrees.innerHTML = `<div>
+             <h1 class="font-bold text-xl">${catagory.name}</h1>
+           <div class="w-full h-40 sm:h-48 md:h-56 lg:h-60 mb-4 overflow-hidden rounded">
+      <img
+        class="w-full h-full object-cover"
+        src="${catagory.image}"
+        
+      />
+    </div>
+            <p class="text-xl font-semibold">
+              Category: <span class="text-gray-500 text-[20px]">${catagory.category}</span>
+            </p>
+            <p class="text-xl font-semibold">
+              Price: <span class="text-gray-500 text-[20px]">${catagory.price}</span>
+            </p>
+            <p class="text-xl font-semibold">
+              Description:
+              <span class="text-gray-500 text-[20px]"
+                >${catagory.description}</span
+              >
+            </p>
+           </div>`;
+  document.getElementById("my_modal_5").showModal();
+};
 
 const displayLoadCointener = (catagorys) => {
   // console.log(catagorys);
@@ -41,13 +78,13 @@ const displayLoadCointener = (catagorys) => {
       <img
         class="w-full h-full object-cover"
         src="${catagory.image}"
-        alt="${catagory.name}"
+        
       />
     </div>
 
     <!-- Title & description -->
     <div class="flex-1">
-      <h3 class="font-bold text-lg mb-1">${catagory.name}</h3>
+     <button> <h3 onclick="detailTrees(${catagory.id})" class=" font-bold text-lg mb-1">${catagory.name}</h3></button>
       <p class="text-sm text-gray-600 line-clamp-3">
         ${catagory.description}
       </p>
@@ -88,7 +125,7 @@ const displayLoadCointener2 = (catagorys) => {
   const catagoryCointener = document.getElementById("green-cointener");
   catagoryCointener.innerHTML = "";
   catagorys.forEach((catagory) => {
-    console.log(catagory);
+    // console.log(catagory);
     const card = document.createElement("div");
     card.innerHTML = `
     <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col">
