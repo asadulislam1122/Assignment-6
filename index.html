@@ -85,44 +85,39 @@
     </header>
 
     <!-- banner -->
-    <section class="mt-2">
-      <div
-        class="relative flex flex-col justify-start items-center h-[383px] bg-[#CFF0DC] text-gray-800 overflow-hidden px-4 md:flex-row md:justify-center"
-      >
-        <!-- Lef Imge -->
+    <section class="mt-4 bg-[#CFF0DC]">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
         <img
+          class="h-36 w-64 sm:h-44 sm:w-72 md:h-56 md:w-96"
           src="./assets/hero-leaf1.png"
-          alt="Left Background"
-          class="absolute left-0 bottom-0 h-[300px] w-auto object-contain"
+          alt="Leaf Left"
         />
 
-        <!-- Right Img -->
-        <img
-          src="./assets/hero-leaf2.png"
-          alt="Right Background"
-          class="absolute right-0 bottom-0 h-[300px] w-auto object-contain"
-        />
-
-        <div class="text-center z-10 px-6 mt-4 md:mt-0">
+        <div class="text-center px-6 max-w-2xl">
           <h1
-            class="text-4xl font-bold mb-2 sm:text-3xl xs:text-2xl font-inter"
+            class="text-2xl font-bold mb-6 sm:text-3xl md:text-3xl font-inter leading-snug"
           >
             Plant a Tree, Grow a Future
           </h1>
-          <p
-            class="text-lg mb-6 sm:text-base xs:text-sm font-inter text-gray-600"
-          >
+          <p class="sm:text-xl md:text-2xl mb-4 font-inter text-gray-600">
             Join our mission to plant 1 million trees and make the Earth greener
             for future generations.
           </p>
           <button
-            class="px-6 py-3 font-semibold font-inter rounded-2xl border-none text-green-700 bg-[#FEBC2F]"
+            class="px-4 py-1 sm:px-4 sm:py-2 font-semibold font-inter rounded-2xl border-none text-green-700 bg-[#FEBC2F] hover:bg-[#f5a623] transition"
           >
             Get Involved
           </button>
         </div>
+
+        <img
+          class="h-36 w-64 sm:h-44 sm:w-72 md:h-56 md:w-96"
+          src="./assets/hero-leaf2.png"
+          alt="Leaf Right"
+        />
       </div>
     </section>
+
     <!--Functionalitics -->
     <section
       class="flex flex-col md:flex-row md:w-[1250px] gap-4 mx-auto mt-10"
@@ -154,9 +149,10 @@
         </div>
       </main>
       <!-- Cart -->
-      <aside class="w-full md:w-1/5 bg-white p-4">
+      <aside id="history-cointainer" class="w-full md:w-1/5 bg-white p-4">
         <h2 class="font-bold mb-4">Your Cart</h2>
-        <ul class="space-y-2">
+        <ul id="cart-list" class="space-y-2"></ul>
+        <!-- <ul class="space-y-2">
           <li class="flex justify-between">
             <span>Mango Tree</span>
             <span>৳500 × 1</span>
@@ -165,7 +161,7 @@
             <span>Guava Tree</span>
             <span>৳500 × 1</span>
           </li>
-        </ul>
+        </ul> -->
         <div class="border-t mt-4 pt-2 flex justify-between font-bold">
           <span>Total:</span>
           <span>৳1000</span>

@@ -25,7 +25,6 @@ const loadCointener = (id) => {
       displayLoadCointener(data.plants);
     });
 };
-// 1111111111111111111111111111111111111111
 
 // tree name modal
 const detailTrees = async (id) => {
@@ -97,12 +96,12 @@ const displayLoadCointener = (catagorys) => {
       >
         ${catagory.category}
       </span>
-      <span class="font-semibold">${catagory.price}</span>
+      <span class="price font-semibold">${catagory.price}</span>
     </div>
 
     <!-- Add to cart -->
     <button
-      class="w-full mt-4 py-2 rounded-full bg-green-700 text-white font-medium hover:bg-green-800 transition"
+      class="w-full call-btn mt-4 py-2 rounded-full bg-green-700 text-white font-medium hover:bg-green-800 transition"
     >
       Add to Cart
     </button>
@@ -111,7 +110,7 @@ const displayLoadCointener = (catagorys) => {
     catagoryCointener.append(card);
   });
 };
-// 222222222222222222222222222222222222222222222222222222222222222222
+// 2
 
 const loadCointener2 = () => {
   const url = `https://openapi.programming-hero.com/api/plants`;
@@ -154,7 +153,7 @@ const displayLoadCointener2 = (catagorys) => {
       >
         ${catagory.category}
       </span>
-      <span class="font-semibold">${catagory.price}</span>
+      <span class="price font-semibold">${catagory.price}</span>
     </div>
 
     <!-- Add to cart -->
@@ -168,7 +167,7 @@ const displayLoadCointener2 = (catagorys) => {
     catagoryCointener.append(card);
   });
 };
-// 2222222222222222222222222222222222222222222
+
 // display
 const displayCategories = (names) => {
   //   1 get
@@ -191,3 +190,27 @@ const displayCategories = (names) => {
 
 lodedCategories();
 loadCointener2(1);
+
+// click button
+const cartList = document.getElementById("cart-list");
+const totalPriceEl = document.getElementById("total-price");
+
+document
+  .getElementById("green-cointener")
+  .addEventListener("click", function (e) {
+    if (e.target.classList.contains("call-btn")) {
+      const card = e.target.closest("div");
+      const name = card.querySelector("h3").innerText;
+
+      const price = parseInt(
+        card.querySelector(".font-semibold").innerText.replace("৳", "")
+      );
+      const li = document.createElement("li");
+      li.classList.add("flex", "justify-between");
+      li.innerHTML = `
+      <span>${name}</span>
+      <span>৳${price} × 1</span>
+    `;
+      cartList.appendChild(li);
+    }
+  });
