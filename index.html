@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green Earth</title>
+    <!-- font awosame cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- tailwind and daisyUI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
@@ -117,54 +125,49 @@
         />
       </div>
     </section>
-
+    <!-- lodding -->
+    <section id="spainar" class="flex justify-center items-center mt-5 hidden">
+      <span class="loading loading-dots loading-xl"></span>
+    </section>
     <!--Functionalitics -->
     <section
-      class="flex flex-col md:flex-row md:w-[1250px] gap-4 mx-auto mt-10"
+      id="main-cointener"
+      class="flex flex-col md:flex-row md:w-[1250px] gap-4 mx-auto mt-6"
     >
       <!-- Left Side -->
       <aside class="w-full md:w-1/5 bg-white p-4">
         <h2 class="font-bold mb-4">Categories</h2>
         <ul class="space-y-2">
-          <li
-            class="font-semibold bg-[#166534] rounded-sm text-white p-1 text-center"
-          >
-            All Trees
-          </li>
+          <li class="font-semibold rounded-sm p-1 text-center">All Trees</li>
           <div id="category-list" class="flex flex-col gap-2"></div>
         </ul>
       </aside>
 
       <!-- Main Content -->
       <main class="flex-1 p-2">
-        <h1 class="text-xl sm:text-2xl font-bold text-center mb-6">
+        <h1 class="text-xl font-inter sm:text-2xl font-bold text-center mb-6">
           Choose Your Trees
         </h1>
         <!-- cointener -->
         <div
           id="green-cointener"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+          class="grid grid-cols-1 font-inter sm:grid-cols-2 md:grid-cols-3 gap-4"
         >
           <!-- Card -->
         </div>
       </main>
-      <!-- Cart -->
-      <aside id="history-cointainer" class="w-full md:w-1/5 bg-white p-4">
+      <aside
+        id="history-cointainer"
+        class="w-full font-inter md:w-1/5 bg-white p-4"
+      >
         <h2 class="font-bold mb-4">Your Cart</h2>
-        <ul id="cart-list" class="space-y-2"></ul>
-        <!-- <ul class="space-y-2">
-          <li class="flex justify-between">
-            <span>Mango Tree</span>
-            <span>৳500 × 1</span>
-          </li>
-          <li class="flex justify-between">
-            <span>Guava Tree</span>
-            <span>৳500 × 1</span>
-          </li>
-        </ul> -->
+
+        <ul id="cart-list" class="space-y-2 font-bold"></ul>
+
+        <!-- Total -->
         <div class="border-t mt-4 pt-2 flex justify-between font-bold">
           <span>Total:</span>
-          <span>৳1000</span>
+          <span>৳<span id="total-price">0</span></span>
         </div>
       </aside>
     </section>
