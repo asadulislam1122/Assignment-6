@@ -217,7 +217,7 @@ document
       const card = e.target.closest("div");
       const name = card.querySelector("h3").innerText;
       const price = parseInt(
-        card.querySelector(".price").innerText.replace("৳", "")
+        card.querySelector(".price").innerText.replace("৳", ""),
       );
       if (cart[name]) {
         cart[name].qty += 1;
